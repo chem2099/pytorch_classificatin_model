@@ -7,6 +7,17 @@ __all__ = ['resnext']
 
 class ResNeXtBottleneck(nn.Module):
     def __init__(self,in_channels, out_channels, stride, cardinality, widen_factor):
+        """ Constructor
+        resNeXt 有三中类型 type a：inception+残差 使用sum加和
+        type b：inception concat 后最好使用1x1的卷积核在卷下 残差
+        type c:群组卷积  后最好使用1x1的卷积核在卷下
+        Args:
+            in_channels: input channel dimensionality
+            out_channels: output channel dimensionality
+            stride: conv stride. Replaces pooling layer.
+            cardinality: num of convolution groups.
+            widen_factor: factor to reduce the input dimensionality before convolution.
+        """
 
 class ResNeXtBottleneck(nn.Module):
     def __init__(self, in_channels, out_channels, stride, cardinality, widen_factor):
