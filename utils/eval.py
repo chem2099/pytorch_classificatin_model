@@ -17,3 +17,5 @@ def accuracy(output, target, topk=(1,)):
         correct_k = correct[:k].view(-1).float().sum(0)
         res.append(correct_k.mul_(100.0 / batch_size))
     return res
+
+# prec1, prec5 = accuracy(outputs.data, targets.data, topk=(1, 5))
